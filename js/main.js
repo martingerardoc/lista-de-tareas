@@ -22,16 +22,17 @@ const facturas = [
  * @description Dentro  de una funcion llamada todos: itera el array facturas e  imprime en consola cada uno de los objetos que se encuentran dentro del array. 
  */
 /* import { facturas } from "./utilities.js"; */
-
+  
 function traerTodos() {
     tabla.innerHTML = ""
     for (let i = 0; i < facturas.length; i++) {
         const element = facturas[i]
-        /* console.log(facturas[i]); */
-        /* console.log(element) */
+        /* console.log(facturas[i]); 
+         console.log(element) */
         agregarFila(element)
     }
 }
+/*  */
 /* Todos() */
 
 /**
@@ -41,7 +42,7 @@ function traerTodos() {
     tabla.innerHTML = ""
     for (let i = 0; i < facturas.length; i++) {
         const element = facturas[i];
-        if (element.estado === "pendientes") {
+        if (element.estado === "pendiente") {
             /* console.log(element) */
             agregarFila(element)
         }
@@ -55,7 +56,7 @@ function traerTodos() {
     tabla.innerHTML = ""
     for (let i = 0; i < facturas.length; i++) {
         const element = facturas[i];
-        if (element.estado === "pagadas") {
+        if (element.estado === "pagada") {
             /* console.log(element) */
             agregarFila(element)
         }
@@ -90,7 +91,7 @@ let tabla = document.querySelector("#tabla")
 
 function agregarFila(obj) {
     let template_fila;
-    if (obj.estado === "pagadas") {
+    if (obj.estado === "pagada") {
         template_fila = `<tr>
                     <td>${obj.id}</td>
                     <td>${obj.numeroFactura}</td>
@@ -108,7 +109,7 @@ function agregarFila(obj) {
                     <td>${obj.fecha}</td>
                 </tr>`
     }
-    tabla.innerHTML += template_fila; 
+    tabla.innerHTML += template_fila
 }
 
 /*  agregarFila(facturas[2]) */
@@ -132,9 +133,9 @@ function toggleModal() {
     modal.classList.toggle("hidden")
 }
 
-addContactBtn.addEventListener("click", toggleModal)
+/* addContactBtn.addEventListener("click", toggleModal) */
 closeModal.addEventListener("click", toggleModal)
-contactForm.addEventListener("submit" , agregarFactura)
+/* contactForm.addEventListener("submit" , agregarFactura) */
 
 /**
  * @description Este punto constara de varias partes:
